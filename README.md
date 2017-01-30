@@ -4,6 +4,7 @@ Make sure to use the most recent version of R (version >= 3.3.2) and the followi
 ```R
 source("https://bioconductor.org/biocLite.R")
 biocLite("gage")
+biocLite("gageData")
 biocLite("pathview")
 biocLite("clusterProfiler")
 biocLite("DESeq2")
