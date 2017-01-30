@@ -1,6 +1,16 @@
 # GCRC_session4
 
-Make sure to use the most recent version of R (version )
+Make sure to use the most recent version of R (version >= 3.3.2) and the following Bioconductor packages are installed:
+```R
+source("https://bioconductor.org/biocLite.R")
+biocLite("gage")
+biocLite("pathview")
+biocLite("clusterProfiler")
+biocLite("DESeq2")
+biocLite("biomaRt")
+
+```
+
 
 # Windows Users
 To update R version from within R terminal in Windows:
