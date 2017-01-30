@@ -7,6 +7,8 @@ biocLite("gage")
 biocLite("gageData")
 biocLite("pathview")
 biocLite("clusterProfiler")
+biocLite("ReactomePA")
+biocLite("fgsea")
 biocLite("DESeq2")
 biocLite("biomaRt")
 
