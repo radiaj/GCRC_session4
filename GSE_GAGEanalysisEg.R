@@ -48,7 +48,7 @@ head(fc.kegg.p$less)
 head(path.ids)
 
 # Look at the top DOWNREGULATED pathways 
-head(path.ids.1)
+head(path.ids.l)
 
 #--------------------------------------------------------------------
 # Use pathview to visualize the top 2 downregulated pathways
