@@ -13,7 +13,13 @@ biocLite("DESeq2")
 biocLite("biomaRt")
 
 ```
+You will need to make sure you install clusterProfiler (version 3.2.11). You can install from clusterProfiler_3.2.11.tgz for MAC users or the clusterProfiler_3.2.11.zip for Windows users. 
 
+```R
+# To check the version installed load the library and run the sessionInfo() function
+library("clusterProfiler")
+sessionInfo()
+```
 
 # Windows Users
 To update R version from within R terminal in Windows:
