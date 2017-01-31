@@ -36,15 +36,21 @@ head(gene)
 
 # GO over-representation test 
 ego <- enrichGO(names(gene), 'org.Hs.eg.db', ont="BP", pvalueCutoff=1, qvalueCutoff=1)
-head(ego) # Works in Windows
+head(ego) 
+#head(summary(ego)) # older versions
 
 # To see more results 
-head(ego[, 1:5], 20)
-write.csv(ego, "hnrnp_EGO_results.csv")
+head(ego[, 1:5], 20) 
+#head(summary(ego)[, 1:5], 20) # older versions
+
+# Save a copy of the results
+write.csv(ego, "hnrnp_EGO_results.csv") # Windows
+#write.csv(summary(ego), "hnrnp_EGO_resultsUNIX.csv") # older versions
 
 # Gene Set Enrichment Analysis of Gene Ontology 
 egoGSEA <- gseGO(geneList, OrgDb='org.Hs.eg.db', ont="BP", pvalueCutoff=1, nPerm = 2) # Used few permutations to save time but I recommend running 100 or 1000 permutations (long computing time - recommend running of the cluster)
 head(egoGSEA)
+#head(summary(egoGSEA)) # older versions
 
 #-------------------------------------------
 # Visualizing clusterProfiler results
@@ -59,13 +65,11 @@ enrichMap(ego, vertex.label.cex=0.7, layout=igraph::layout.kamada.kawai)
 cnetplot(ego, categorySize="pvalue", foldChange=geneList)
 
 # To visualize the cnetplot as an interactive plot
-cnetplot(ego, categorySize="pvalue", foldChange=geneList, fixed=FALSE)
+cnetplot(ego, categorySize="pvalue", foldChange=geneList, fixed=FALSE) # WORKS BETTER IN WINDOWS or the R console directly
 # To convert ps to png https://cloudconvert.com/eps-to-png
 
 # To plot a GSEAplot
 gseaplot(egoGSEA, geneSetID = "GO:0001101")
-
-
 
 #--------------------------------------------------------------------
 # Reactome Pathway Analysis with the ReactomePA package
