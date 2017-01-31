@@ -36,7 +36,7 @@ head(gene)
 
 # GO over-representation test 
 ego <- enrichGO(names(gene), 'org.Hs.eg.db', ont="BP", pvalueCutoff=1, qvalueCutoff=1)
-head(ego)
+head(ego) # Works in Windows
 
 # To see more results 
 head(ego[, 1:5], 20)
