@@ -118,3 +118,12 @@ plotGseaTable(examplePathways[topPathways], exampleRanks, fgseaRes,
               gseaParam = 0.5)
 
 
+#---------------------------------------------
+# Converting entrez ids to gene symbols
+#---------------------------------------------
+library("org.Hs.eg.db")
+genes <- names(geneList)
+mySymbols <- unlist(mget(genes, org.Hs.egSYMBOL, ifnotfound=NA))
+head(mySymbols)
+
+
