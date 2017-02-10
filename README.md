@@ -1,3 +1,13 @@
+# To Convert Gene Ids from Gene Symbol to Entrez Ids in R
+```R
+library("AnnotationDbi")
+library("org.Hs.eg.db")
+columns(org.Hs.eg.db)
+
+# M1 is your matrix of gene expression data
+geneSymbols.ID <- mapIds(org.Hs.eg.db, keys=rownames(M1), column="SYMBOL", keytype="ENTREZID", multiVals="first")
+
+```
 # GCRC_session4
 
 Make sure to use the most recent version of R (version >= 3.3.2) and the following Bioconductor packages are installed:
